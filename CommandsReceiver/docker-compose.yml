@@ -1,0 +1,23 @@
+version: '3.4'
+volumes:
+  rabbitmq:
+
+services:
+  commandsreceiver:
+    image: ${DOCKER_REGISTRY-}commandsreceiver
+    environment:
+      RabbitMQ__HostName: "rabbitmq"
+      Telegram__Token: ""
+    build:
+      context: .
+      dockerfile: CommandsReceiver/Dockerfile
+    ports:
+     - 54543:8080
+  rabbitmq:
+    image: rabbitmq:latest
+    hostname: rabbitmq
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672

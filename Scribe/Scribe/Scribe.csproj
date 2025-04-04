@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    <PackageReference Include="TDLib.Api" Version="1.8.21" />
+    <PackageReference Include="tdlib.native" Version="1.8.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImageGenerators\ImageGenerators.csproj" />
+    <ProjectReference Include="..\LLMWorkers\LLMWorkers.csproj" />
+    <ProjectReference Include="..\ParsingScenario\ParsingScenario.csproj" />
+    <ProjectReference Include="..\TextToSpeech\TextToSpeech.csproj" />
+  </ItemGroup>
+
+</Project>
